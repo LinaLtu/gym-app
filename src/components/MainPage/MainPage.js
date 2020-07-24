@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../Header';
 import SearchField from '../SearchField';
+import CoursesList from '../CoursesList';
 
 import './MainPage.scss';
 
@@ -11,6 +12,7 @@ const MainPage = () => {
         <div className={CSS_NAME}>
             <Header />
             <SearchField />
+            <CoursesList />
         </div>
     );
 }
