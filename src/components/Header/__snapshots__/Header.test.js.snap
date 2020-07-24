@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component renders according to design 1`] = `
+<div
+  className="header"
+>
+  Gymondo
+  <div
+    className="header_logo"
+  />
+</div>
+`;
