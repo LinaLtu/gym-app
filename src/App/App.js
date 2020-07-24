@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../components/Header';
 import './App.scss';
+import MainPage from '../components/MainPage'
 
 const CSS_NAME = 'app'
 
-function App() {
+const App = () => {
   return (
     <div className={CSS_NAME}>
-      <Header />
+      <MainPage />
     </div>
   );
 }
