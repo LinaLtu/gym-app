@@ -4,8 +4,8 @@ import './SearchField.scss';
 const CSS_NAME = 'search-field'
 
 const SearchField = () => {
-    const [itemsByStartDate, setItemsByStartDate] = useState(['today', 'tomorrow', 'Monday']);
-    const [itemsByCategory, setitemsByCategory] = useState(['zumba', 'body pump', 'body attack']);
+    const [itemsByStartDate, setItemsByStartDate] = useState(['all', 'today', 'tomorrow', 'Monday']);
+    const [itemsByCategory, setitemsByCategory] = useState(['all', 'zumba', 'body pump', 'body attack']);
 
     const searchOptionsByStartDate = itemsByStartDate.map((item, index) => (
         <option value={item} key={index}>{item}</option>

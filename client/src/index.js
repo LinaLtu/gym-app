@@ -12,7 +12,7 @@ const router = (
   <Router history={createBrowserHistory}>
     <div>
       <Route exact path="/" component={MainPage} />
-      <Route path="/course" component={DetailsPage} />
+      <Route path="/course/:courseId" component={DetailsPage} />
     </div>
   </Router>
 );

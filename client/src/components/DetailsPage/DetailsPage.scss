@@ -1,0 +1,15 @@
+.details-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    &_course-card {
+        width: 400px;
+        height: 400px;
+        margin-top: 70px;
+        border: 1px solid black;
+    }
+}
