@@ -6,8 +6,6 @@ module.exports = async (app) => {
         ? process.env.MONGO_URI
         : `mongodb://localhost:27017/gymondo-${process.env.NODE_ENV || 'dev'}`;
 
-    console.log(mongoUri);
-
     await mongoose.connect(mongoUri, { useFindAndModify: false, useNewUrlParser: true, useUnifiedTopology: true });
 
     const coursesSchema = courseSchemaCreator(mongoose);
