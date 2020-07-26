@@ -1,4 +1,5 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './CourseCard.scss';
 
 const CSS_NAME = 'course-card';
@@ -27,10 +28,15 @@ const mockCourseList = [
 const CourseCard = () => {
 
     const [courseList, setCourseList] = useState(mockCourseList);
+    const history = useHistory();
+
+    const handleOnClick = () => {
+        history.push("/course")
+    }
 
     const courseCardTemplate = courseList.map(course => {
         return (
-            <div className={CSS_NAME}>
+            <div className={CSS_NAME} onClick={handleOnClick}>
                 <div>Course Name: {course.name}</div>
                 <div>Description: {course.description}</div>
                 <div>Start Date: {course.startDate}</div>
