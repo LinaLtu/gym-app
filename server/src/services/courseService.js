@@ -4,9 +4,20 @@ module.exports = class CourseService {
         this.DEFAULT_LIMIT = 20;
     }
 
-    async getCourses(page = 1) {
+    /**
+     * @param {Moment} startDate 
+     * @param {string[]} categories 
+     * @param {number} page 
+     * @returns Promise<Course[]>
+     */
+    async getCourses(startDate, categories = [], page = 1) {
         const offset = (page - 1) * 20;
 
-        return await this.courseRepo.find(offset, this.DEFAULT_LIMIT);
+        return await this.courseRepo.findFromDate(
+            startDate,
+            categories,
+            offset,
+            this.DEFAULT_LIMIT,
+        );
     }
 }

@@ -5,8 +5,29 @@ module.exports = class CourseRepo {
         this.courseModel = courseModel;
     }
 
-    async find(offset = 0, limit = 20) {
-        const coursesData = await this.courseModel.find()
+    /**
+     * @param {Moment} fromDate 
+     * @param {string[]} categories 
+     * @param {number} offset 
+     * @param {number} limit 
+     * @return Promise<Course[]>
+     */
+    async findFromDate(fromDate, categories = [], offset = 0, limit = 20) {
+        const coursesData = await this.courseModel
+            .find({
+                startDate: {
+                    $gte: fromDate.toDate(),
+                    $lte: fromDate.clone().add(12, 'months')
+                },
+                ...(categories.length > 0 && {
+                    category: {
+                        $in: categories
+                    }
+                })
+            })
+            .sort({
+                startDate: 1
+            })
             .limit(limit)
             .skip(offset)
             .lean()

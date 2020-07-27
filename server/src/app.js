@@ -3,7 +3,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const mongoInitializer = require('./infra/mongo/index');
 const CourseRepo = require('./infra/repos/courseRepo');
-const apis = require('./api/courses');
+const apis = require('./controllers/courses');
 
 const loadApp = async (app) => {
     await mongoInitializer(app);
