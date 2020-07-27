@@ -21,4 +21,10 @@
         @include button_styles_hover 
     }
 
+    &_label {
+        font-weight: 600;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
 }

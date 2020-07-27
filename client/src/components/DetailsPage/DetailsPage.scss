@@ -20,7 +20,7 @@
         border: 1px solid white;
         border-radius: 5px;
         font-weight: bold;
-        margin: 20px;
+        margin: 50px;
         color: white;
         background-color: $brand_color;
         box-shadow: 0 0 6px 0 rgba(0,0,0,0.2);
@@ -42,7 +42,7 @@
     &_back-button {
         @include button_styles;
         position: absolute;
-        bottom: 30px;
+        bottom: 15%;
         color: $brand_color;
         background-color: white;
         margin: 10px;

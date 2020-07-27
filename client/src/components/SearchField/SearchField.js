@@ -26,13 +26,13 @@ const SearchField = () => {
     return (
         <div className={CSS_NAME}>
             <div className={`${CSS_NAME}_start-date`}>
-                <label for="byStartDate">Search By Start Date </label>
+                <label for="byStartDate" className={`${CSS_NAME}_label`}>Search By Start Date </label>
                 <select value={'item'} onChange={handleChange}>
                     {searchOptionsByStartDate}
                 </select>
             </div>
             <div className={`${CSS_NAME}_category`}>
-                <label for="byStartDate">Search By Category </label>
+                <label for="byStartDate" className={`${CSS_NAME}_label`}>Search By Category </label>
                 <select value={'item'} onChange={handleChange}>
                     {searchOptionsByCategory}
                 </select>
