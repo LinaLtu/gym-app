@@ -1,6 +1,7 @@
 @import '../shared/common.scss';
 
 .details-page {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,8 +41,11 @@
 
     &_back-button {
         @include button_styles;
+        position: absolute;
+        bottom: 30px;
         color: $brand_color;
         background-color: white;
+        margin: 10px;
     }
 
     &_back-button:hover {
