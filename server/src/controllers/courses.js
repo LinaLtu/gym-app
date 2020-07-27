@@ -3,8 +3,10 @@ const moment = require('moment');
 
 module.exports = (app) => {
     app.get('/courses', async (req, res) => {
-        const page = req.query.page && Number.isInteger(req.query.page) && req.query.page > 0
-            ? req.query.page
+        const parsedPage = parseInt(req.query.page, 10);
+
+        const page = parsedPage > 0
+            ? parsedPage
             : 1;
 
         const startDate = req.query.startDate;
@@ -31,7 +33,7 @@ module.exports = (app) => {
             data: courses.map(course => ({
                 _id: course._id,
                 name: course.name,
-                description: description,
+                description: course.description,
                 startDate: course.startDate.toISOString(),
                 category: course.category
             }))
