@@ -27,12 +27,14 @@ module.exports = (app) => {
 
         const courses = await courseService.getCourses(startDateMoment, categories, page);
 
-        res.json(courses.map(course => ({
-            _id: course._id,
-            name: course.name,
-            description: description,
-            startDate: course.startDate.toISOString(),
-            category: course.category
-        })))
+        res.json({
+            data: courses.map(course => ({
+                _id: course._id,
+                name: course.name,
+                description: description,
+                startDate: course.startDate.toISOString(),
+                category: course.category
+            }))
+        })
     });
 }
