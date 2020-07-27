@@ -33,14 +33,9 @@ const CoursesList = () => {
 
     const [courseList, setCourseList] = useState(mockCourseList);
 
-    return courseList.map(course => {
-        return (
-            <div className={CSS_NAME}>
-                <CourseCard course={course} />
-            </div>
-        )
-
-    });
+    return (<div className={CSS_NAME}>
+        {courseList.map(course => { return <CourseCard course={course} /> })}
+    </div>)
 }
 
 export default CoursesList;

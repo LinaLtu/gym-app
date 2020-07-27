@@ -1,7 +1,9 @@
+@import '../shared/common.scss';
+
 .header {
     width: 100%;
     height: 70px;
-    background-color: #ff7f66;
+    background-color: $brand_color;
 
     &_logo {
         height: 100px;
