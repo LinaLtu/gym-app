@@ -6,17 +6,15 @@ const CSS_NAME = 'details-page';
 
 
 const DetailsPage = () => {
-    // const course = useContext(CourseContext);
-    // console.log("course", course);
 
     return (
         <div className={CSS_NAME}>
             <Header />
             <div className={`${CSS_NAME}_course-card`}>
-                <div>Course Name: "Course"</div>
-                <div>Description: "Description"</div>
-                <div>Start Date: "Date"</div>
-                <div>Category: "Category"</div>
+                <div className={`${CSS_NAME}_course-name`}>"Course"</div>
+                <div className={`${CSS_NAME}_details`}>StartDate | Category</div>
+                <div className={`${CSS_NAME}_description`}>Description: Very very long</div>
+                <button className={`${CSS_NAME}_back-button`} >Go Back</button>
             </div>
         </div>
     )
