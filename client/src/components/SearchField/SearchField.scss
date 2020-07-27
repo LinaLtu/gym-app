@@ -1,3 +1,5 @@
+@import '../shared/common.scss';
+
 .search-field {
     display: flex;
     align-items: flex-end;
@@ -9,24 +11,14 @@
     border-bottom: 2px solid #d4d4d4;
 
     &_cta {
+        @include button_styles;
         color: white;
         background-color: #ff7f66;
-        font-weight: 400;
-        font-size: 12px;
-        letter-spacing: 0.3px;
-        text-align: center;
-        text-transform: uppercase;
-        height: 30px;
-        width: 100px;
-        line-height: 28px;
-        box-shadow: 0 0 6px 0 rgba(0,0,0,0.2);
-        border-radius: 5px;
-        border: 1px solid white;
+
     }
 
     &_cta:hover {
-        cursor: pointer;
-        opacity: 0.8;
+        @include button_styles_hover 
     }
 
 }

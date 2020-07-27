@@ -1,0 +1,21 @@
+$brand_color: #ff7f66;
+
+@mixin button_styles {
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    text-align: center;
+    text-transform: uppercase;
+    height: 30px;
+    width: 100px;
+    line-height: 28px;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+
+@mixin button_styles_hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
