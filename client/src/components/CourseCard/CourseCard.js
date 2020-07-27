@@ -12,13 +12,11 @@ const CourseCard = ({ course }) => {
     }
 
     return (
-
         <div className={CSS_NAME} onClick={handleOnClick}>
-            <div>Course Name: {course.name}</div>
-            <div>Description: {course.description}</div>
-            <div>Start Date: {course.startDate}</div>
-            <div>Category: {course.category}</div>
-        </div>
+            <div className={`${CSS_NAME}_course-name`}>{course.name}</div>
+            <div className={`${CSS_NAME}_details`}>{course.startDate} | {course.category}</div>
+            <div className={`${CSS_NAME}_description`}> {course.description}</div>
+        </div >
     )
 }
 

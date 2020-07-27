@@ -1,11 +1,38 @@
+@import '../shared/common.scss';
+
 .course-card {
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 5px;
+    font-weight: bold;
     width: 255px;
     height: 200px;
     margin: 20px;
+    color: white;
+    background-color: $brand_color;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.2);
+
+    &_course-name {
+        font-size: 32px;
+        padding: 20px 10px;
+    }
+
+    &_details {
+        padding: 10px;
+    }
+
+    &_description {
+        padding: 10px;
+        visibility: hidden;
+    }
+
 }
 
 .course-card:hover {
     cursor: pointer;
+    opacity: 0.7;
+
+    .course-card_description {
+        visibility: visible;
+        transition: all 2s ease-in-out;
+    }  
 }
