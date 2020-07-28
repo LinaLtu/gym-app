@@ -1,41 +1,27 @@
 import React, { useState } from 'react';
+import SearchDatePicker from './DatePicker';
+import CategoryPicker from './CategoryPicker';
 import './SearchField.scss';
 
 const CSS_NAME = 'search-field'
 
 const SearchField = () => {
-    const [itemsByStartDate, setItemsByStartDate] = useState(['all', 'today', 'tomorrow', 'Monday']);
-    const [itemsByCategory, setitemsByCategory] = useState(['all', 'zumba', 'body pump', 'body attack']);
 
-    const searchOptionsByStartDate = itemsByStartDate.map((item, index) => (
-        <option value={item} key={index}>{item}</option>
-    ));
-
-    const searchOptionsByCategory = itemsByCategory.map((item, index) => (
-        <option value={item} key={index}>{item}</option>
-    ));
-
-    const handleChange = () => {
-        console.log('Selected')
-    }
+    const [itemsByCategory, setItemsByCategory] = useState([]);
 
     const handleButtonClick = () => {
-        console.log("The Search button has been clicked!")
+        console.log(itemsByCategory)
     }
 
     return (
         <div className={CSS_NAME}>
             <div className={`${CSS_NAME}_start-date`}>
                 <label for="byStartDate" className={`${CSS_NAME}_label`}>Search By Start Date </label>
-                <select value={'item'} onChange={handleChange}>
-                    {searchOptionsByStartDate}
-                </select>
+                < SearchDatePicker />
             </div>
             <div className={`${CSS_NAME}_category`}>
                 <label for="byStartDate" className={`${CSS_NAME}_label`}>Search By Category </label>
-                <select value={'item'} onChange={handleChange}>
-                    {searchOptionsByCategory}
-                </select>
+                < CategoryPicker setItemsByCategory={setItemsByCategory} />
             </div>
             <button className={`${CSS_NAME}_cta`} onClick={handleButtonClick}>Search!</button>
         </div>
