@@ -7,7 +7,7 @@ const CSS_NAME = 'course-list'
 const CoursesList = ({ courses }) => {
 
     return (<div className={CSS_NAME}>
-        {courses.map(course => { return <CourseCard course={course} /> })}
+        {courses.map((course, index) => { return <CourseCard course={course} key={index} /> })}
     </div>)
 }
 

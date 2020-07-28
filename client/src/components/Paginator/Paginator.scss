@@ -1,0 +1,17 @@
+.paginator {
+    font-size: 21px;
+    display: block;
+    max-width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+
+    &_arrow:hover {
+        cursor: pointer;
+    }
+}
+
+.paginator>span {
+    padding: 10px;
+}
+

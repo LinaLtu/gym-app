@@ -5,6 +5,7 @@ import { useQuery } from 'react-query';
 import Header from '../Header';
 import SearchField from '../SearchField';
 import CoursesList from '../CoursesList';
+import Paginator from '../Paginator';
 import { getCourses } from '../../services/courseService'
 
 import './MainPage.scss';
@@ -12,6 +13,7 @@ import './MainPage.scss';
 const CSS_NAME = 'main-page'
 
 const MainPage = () => {
+
     const [page, setPage] = useState(1);
 
     const { data, status } = useQuery(['courses', page], (_, page) => getCourses(moment(), [], page));
@@ -29,6 +31,7 @@ const MainPage = () => {
             <Header />
             <SearchField />
             <CoursesList courses={data} />
+            <Paginator currentPage={page} setPage={setPage} numberOfCourses={data.length} />
         </div>
     );
 }
