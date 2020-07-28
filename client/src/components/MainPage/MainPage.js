@@ -27,7 +27,6 @@ const MainPage = () => {
         return <div>Error!</div>;
     }
 
-    console.log("data", data);
     return (
         <div className={CSS_NAME}>
             <Header />
