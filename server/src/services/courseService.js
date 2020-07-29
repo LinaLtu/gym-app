@@ -5,6 +5,7 @@ module.exports = class CourseService {
     }
 
     /**
+     * 
      * @param {Moment} startDate 
      * @param {string[]} categories 
      * @param {number} page 
@@ -19,5 +20,17 @@ module.exports = class CourseService {
             offset,
             this.DEFAULT_LIMIT,
         );
+    }
+
+    async getCourseById(id) {
+        const course = await this.courseRepo.findById(
+            id
+        );
+
+        if (!course) {
+            throw new Error('Course not found');
+        }
+
+        return course;
     }
 }

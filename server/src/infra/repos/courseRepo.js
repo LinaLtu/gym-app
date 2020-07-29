@@ -33,6 +33,20 @@ module.exports = class CourseRepo {
             .lean()
             .exec();
 
+
         return coursesData.map((courseData) => new Course(courseData));
+    }
+
+    async findById(id) {
+        const courseData = await this.courseModel
+            .findById(id)
+            .lean()
+            .exec();
+
+        if (!courseData) {
+            return;
+        }
+
+        return new Course(courseData);
     }
 }
