@@ -6,10 +6,8 @@ import MainPage from './components/MainPage';
 import DetailsPage from './components/DetailsPage';
 import './index.css';
 
-const history = createBrowserHistory();
-
 const router = (
-  <Router history={createBrowserHistory}>
+  <Router history={createBrowserHistory()}>
     <div>
       <Route exact path="/" component={MainPage} />
       <Route path="/course/:courseId" component={DetailsPage} />

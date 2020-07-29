@@ -15,8 +15,6 @@ const SearchField = ({ page }) => {
 
     const { status } = useQuery(['courses', page, date, category], (_, page, date, category) => getCourses(moment(date), category, page));
 
-    console.log('status', status);
-
     if (status === 'loading') {
         return <div>Loading...</div>;
     }

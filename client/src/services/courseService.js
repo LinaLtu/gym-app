@@ -16,3 +16,7 @@ export const getCourses = async (startDate, categories = [], page = 1) => {
         }
     })).data.data;
 }
+
+export const getCourseById = async (id) => {
+    return (await axios.get(`${config.coursesApi.url}/${id}`)).data.data;
+}
