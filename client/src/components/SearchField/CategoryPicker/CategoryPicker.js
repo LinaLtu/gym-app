@@ -23,8 +23,8 @@ const CategoryPick = ({ setItemsByCategory }) => {
 
     return (
         <div className={CSS_NAME}>
-            {defaultCategories.map(category => {
-                return (<div onClick={() => handleSelect(category)}>
+            {defaultCategories.map((category, index) => {
+                return (<div onClick={() => handleSelect(category)} key={index}>
                     <input type="checkbox" id="category" name={category} />
                     <label for={category}>{category}</label>
                 </div>)

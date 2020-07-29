@@ -8,7 +8,7 @@ const CourseCard = ({ course }) => {
     const history = useHistory();
 
     const handleOnClick = () => {
-        history.push(`/course/${course.id}`)
+        history.push(`/course/${course._id}`)
     }
 
     return (
