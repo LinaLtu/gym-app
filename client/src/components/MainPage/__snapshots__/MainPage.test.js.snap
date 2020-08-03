@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainPage Component renders according to design 1`] = `
+<div
+  className="main-page"
+>
+  <Header />
+  <SearchField
+    categories={Array []}
+    page={1}
+    setCategories={[Function]}
+    setDate={[Function]}
+  />
+  <CoursesList
+    courses={Array []}
+  />
+  <Paginator
+    areCoursesFound={false}
+    currentPage={1}
+    setPage={[Function]}
+  />
+</div>
+`;

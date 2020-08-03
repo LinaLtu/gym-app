@@ -3,11 +3,14 @@ import renderer from 'react-test-renderer';
 
 import SearchField from './';
 
+jest.mock('./DatePicker', () => 'SearchDatePicker');
+jest.mock('./CategoryPicker', () => 'CategoryPicker');
+
 
 describe('SearchField Component', () => {
     it('renders according to design', () => {
         const component = renderer.create(
-            <Header />
+            <SearchField />
         );
         const tree = component.toJSON();
 
