@@ -1,0 +1,13 @@
+.logo {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 0;
+    height: 100%;
+    width: 8%;
+    background-image: url('./logo.jpg');
+    background-size: 100% 100%;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
