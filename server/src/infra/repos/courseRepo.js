@@ -1,3 +1,4 @@
+const { ObjectID } = require('mongodb');
 const Course = require('../../models/course');
 
 module.exports = class CourseRepo {
@@ -38,6 +39,11 @@ module.exports = class CourseRepo {
     }
 
     async findById(id) {
+        // prevent server from crashing if the id passed aiis not a valit Mongo object
+        if (!ObjectID.isValid(id)) {
+            return;
+        }
+
         const courseData = await this.courseModel
             .findById(id)
             .lean()
