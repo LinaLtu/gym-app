@@ -1,8 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 import { useQuery } from 'react-query';
-import { useHistory } from 'react-router-dom';
 import Header from '../Header';
 import SearchField from '../SearchField';
 import CoursesList from '../CoursesList';
@@ -14,25 +13,23 @@ import './MainPage.scss';
 const CSS_NAME = 'main-page'
 
 const MainPage = () => {
-
-    const history = useHistory();
-
-    const handleGoBack = () => {
-        history.push("/");
-    }
-
     const [categories, setCategories] = useState([]);
     const [date, setDate] = useState(moment());
     const [page, setPage] = useState(1);
     const [areCoursesFound, setAreCoursesFound] = useState(true);
 
-    const [data, setData] = useState([]);
+    let { data } = useQuery(['courses', page, date, categories], (_, page, date, categories) => getCourses(moment(date), categories, page));
 
-    useEffect(() => {
-        getCourses(moment(date), categories, page)
-            .then(responseData => setData(responseData))
-    }, [page, date, categories])
+    if (!data) {
+        data = [];
+    }
 
+    // Instead of react-query, the useEffect() hook could be used
+
+    // useEffect(() => {
+    //     getCourses(moment(date), categories, page)
+    //         .then(responseData => setData(responseData))
+    // }, [page, date, categories])
 
     if (data.length <= 0) {
         if (areCoursesFound) {
@@ -54,6 +51,5 @@ const MainPage = () => {
         </div>
     );
 }
-
 
 export default MainPage;

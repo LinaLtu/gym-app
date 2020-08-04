@@ -1,37 +1,21 @@
-import React, { useState } from 'react';
-import { useQuery } from 'react-query';
+import React from 'react';
 import moment from 'moment';
-import { getCourses } from '../../services/courseService'
 import SearchDatePicker from './DatePicker';
 import CategoryPicker from './CategoryPicker';
 import './SearchField.scss';
 
 const CSS_NAME = 'search-field'
 
-const SearchField = ({ page }) => {
-
-    const [category, setCategory] = useState([]);
-    const [date, setDate] = useState(moment());
-
-    const { status } = useQuery(['courses', page, date, category], (_, page, date, category) => getCourses(moment(date), category, page));
-
-    if (status === 'loading') {
-        return <div>Loading...</div>;
-    }
-
-    if (status === 'error') {
-        return <div>Error!</div>;
-    }
-
+const SearchField = ({ categories, date, setCategories, setDate }) => {
     return (
         <div className={CSS_NAME}>
             <div className={`${CSS_NAME}_start-date`}>
-                <label for="byStartDate" className={`${CSS_NAME}_label`}>Search By Start Date </label>
-                < SearchDatePicker setItemsByDate={setDate} />
+                <label for="byStartDate" className={`${CSS_NAME}_label`}>Search By Start Date</label>
+                < SearchDatePicker callback={setDate} date={moment(date).toDate()} />
             </div>
             <div className={`${CSS_NAME}_category`}>
-                <label for="byStartDate" className={`${CSS_NAME}_label`}>Search By Category </label>
-                < CategoryPicker setItemsByCategory={setCategory} />
+                <label for="byStartDate" className={`${CSS_NAME}_label`}>Search By Category</label>
+                < CategoryPicker callback={setCategories} categories={categories} />
             </div>
             <button className={`${CSS_NAME}_cta`}>Search!</button>
         </div>

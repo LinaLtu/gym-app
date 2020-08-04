@@ -1,22 +1,33 @@
 import React, { useState } from 'react';
 import './CategoryPicker.scss';
 
-const CategoryPick = ({ setItemsByCategory }) => {
-    const defaultCategories = ['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7'];
+const CategoryPick = ({ callback, categories }) => {
+    const defaultCategories = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'];
+    const [checkedState, setCheckedState] = useState(defaultCategories.reduce((object, category) => {
+        object[category] = true;
+        return object;
+    }, {}));
 
-    const [selectedCategories] = useState([])
+    const handleSelect = (e) => {
+        const category = e.target.name;
+        const value = e.target.checked;
 
-    const handleSelect = (category) => {
-        // if an item is selected
-        if (!selectedCategories.includes(category)) {
-            selectedCategories.push(category)
-            // in an item us unselected
-        } else {
-            const index = selectedCategories.indexOf(category);
-            selectedCategories.splice(index, 1);
-        }
+        const updatedState = {
+            ...checkedState,
+            ...{ [category]: value }
+        };
 
-        setItemsByCategory(selectedCategories);
+        const selectedKeysList = Object.keys(updatedState).reduce((list, category) => {
+            if (updatedState[category] === true) {
+                list.push(category);
+            }
+
+            return list;
+        }, []);
+
+        setCheckedState(updatedState);
+
+        callback(selectedKeysList);
     }
 
     const CSS_NAME = 'category-picker';
@@ -24,8 +35,15 @@ const CategoryPick = ({ setItemsByCategory }) => {
     return (
         <div className={CSS_NAME}>
             {defaultCategories.map((category, index) => {
-                return (<div onClick={() => handleSelect(category)} key={index}>
-                    <input type="checkbox" id="category" name={category} />
+                return (<div key={index}>
+                    <input
+                        onChange={(e) => handleSelect(e)}
+                        type="checkbox"
+                        id="category"
+                        name={category}
+                        onClick={handleSelect}
+                        checked={checkedState && checkedState[category]}
+                    />
                     <label for={category}>{category}</label>
                 </div>)
             })}
