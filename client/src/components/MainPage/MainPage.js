@@ -16,13 +16,16 @@ const MainPage = () => {
     const [categories, setCategories] = useState([]);
     const [date, setDate] = useState(moment());
     const [page, setPage] = useState(1);
-    const [areCoursesFound, setAreCoursesFound] = useState(true);
+
+    let dataLength;
 
     let { data } = useQuery(['courses', page, date, categories], (_, page, date, categories) => getCourses(moment(date), categories, page));
 
     if (!data) {
         data = [];
     }
+
+    dataLength = data.length;
 
     // Instead of react-query, the useEffect() hook could be used
 
@@ -31,11 +34,6 @@ const MainPage = () => {
     //         .then(responseData => setData(responseData))
     // }, [page, date, categories])
 
-    if (data.length <= 0) {
-        if (areCoursesFound) {
-            setAreCoursesFound(false)
-        }
-    }
 
     return (
         <div className={CSS_NAME}>
@@ -47,7 +45,7 @@ const MainPage = () => {
                 setDate={setDate}
             />
             <CoursesList courses={data} />
-            <Paginator currentPage={page} setPage={setPage} areCoursesFound={areCoursesFound} />
+            <Paginator currentPage={page} setPage={setPage} dataLength={dataLength} />
         </div>
     );
 }

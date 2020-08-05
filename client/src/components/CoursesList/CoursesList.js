@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './CoursesList.scss';
 import CourseCard from '../CourseCard';
 
