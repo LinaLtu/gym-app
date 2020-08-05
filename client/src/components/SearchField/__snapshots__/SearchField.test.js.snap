@@ -14,7 +14,7 @@ exports[`SearchField Component renders according to design 1`] = `
       Search By Start Date
     </label>
     <SearchDatePicker
-      date={2020-08-03T17:18:50.582Z}
+      date={2020-08-05T15:20:03.799Z}
     />
   </div>
   <div
@@ -28,10 +28,5 @@ exports[`SearchField Component renders according to design 1`] = `
     </label>
     <CategoryPicker />
   </div>
-  <button
-    className="search-field_cta"
-  >
-    Search!
-  </button>
 </div>
 `;

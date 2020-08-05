@@ -10,17 +10,6 @@
     background-color:white;
     border-bottom: 2px solid #d4d4d4;
 
-    &_cta {
-        @include button_styles;
-        color: white;
-        background-color: #ff7f66;
-
-    }
-
-    &_cta:hover {
-        @include button_styles_hover 
-    }
-
     &_label {
         font-weight: 600;
         font-size: 14px;
