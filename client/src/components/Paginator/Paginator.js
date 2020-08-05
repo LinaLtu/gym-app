@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Paginator.scss';
 
 const CSS_NAME = 'paginator'
@@ -53,5 +54,12 @@ const Paginator = ({ currentPage, setPage, dataLength }) => {
         </div >
     )
 }
+
+
+Paginator.propTypes = {
+    currentPage: PropTypes.number.isRequired,
+    setPage: PropTypes.number.isRequired,
+    dataLength: PropTypes.number.isRequired
+};
 
 export default Paginator

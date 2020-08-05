@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import PropTypes from 'prop-types';
 import DatePicker from "react-datepicker";
+
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -18,5 +20,10 @@ const SearchDatePicker = ({ callback, date }) => {
         />
     );
 }
+
+SearchDatePicker.propTypes = {
+    callback: PropTypes.func.isRequired,
+    date: PropTypes.string.isRequired
+};
 
 export default SearchDatePicker;

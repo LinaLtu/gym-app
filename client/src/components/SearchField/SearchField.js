@@ -1,12 +1,13 @@
 import React from 'react';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 import SearchDatePicker from './DatePicker';
 import CategoryPicker from './CategoryPicker';
 import './SearchField.scss';
 
 const CSS_NAME = 'search-field'
 
-const SearchField = ({ categories, date, setCategories, setDate }) => {
+const SearchField = ({ date, setCategories, setDate }) => {
     return (
         <div className={CSS_NAME}>
             <div className={`${CSS_NAME}_start-date`}>
@@ -15,11 +16,16 @@ const SearchField = ({ categories, date, setCategories, setDate }) => {
             </div>
             <div className={`${CSS_NAME}_category`}>
                 <label for="byStartDate" className={`${CSS_NAME}_label`}>Search By Category</label>
-                < CategoryPicker callback={setCategories} categories={categories} />
+                < CategoryPicker callback={setCategories} />
             </div>
-            <button className={`${CSS_NAME}_cta`}>Search!</button>
         </div>
     )
 }
+
+SearchField.propTypes = {
+    date: PropTypes.string.isRequired,
+    setCategories: PropTypes.func.isRequired,
+    setDate: PropTypes.func.isRequired
+};
 
 export default SearchField;

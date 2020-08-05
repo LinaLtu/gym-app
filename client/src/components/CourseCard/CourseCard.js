@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import './CourseCard.scss';
 
@@ -19,5 +20,10 @@ const CourseCard = ({ course }) => {
         </div >
     )
 }
+
+CourseCard.propTypes = {
+    course: PropTypes.object.isRequired
+};
+
 
 export default CourseCard;

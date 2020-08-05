@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './CoursesList.scss';
 import CourseCard from '../CourseCard';
 
@@ -10,5 +11,9 @@ const CoursesList = ({ courses }) => {
         {courses.map((course, index) => { return <CourseCard course={course} key={index} /> })}
     </div>)
 }
+
+CoursesList.propTypes = {
+    courses: PropTypes.array.isRequired
+};
 
 export default CoursesList;
