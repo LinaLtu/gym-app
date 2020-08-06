@@ -9,7 +9,7 @@ This repository includes a simple React application, which displays a list of co
 
 ### To Run the App
 
-In order to run the Backend, you need to go to `server` directory, then:
+In order to run the Back End, you need to go to `server` directory, then:
 
 - run `npm install`
 
