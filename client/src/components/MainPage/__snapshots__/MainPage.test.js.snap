@@ -15,8 +15,8 @@ exports[`MainPage Component renders according to design 1`] = `
     courses={Array []}
   />
   <Paginator
-    areCoursesFound={false}
     currentPage={1}
+    dataLength={0}
     setPage={[Function]}
   />
 </div>

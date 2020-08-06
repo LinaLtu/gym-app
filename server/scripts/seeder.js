@@ -2,7 +2,7 @@ const express = require('express');
 const moment = require('moment');
 const mongoInitializer = require('../src/infra/mongo/index');
 
-const WANTED_COURSES = 100;
+const WANTED_COURSES = 1000;
 const CATEGORIES = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'];
 
 const getRandomIntInclusive = (min, max) => {

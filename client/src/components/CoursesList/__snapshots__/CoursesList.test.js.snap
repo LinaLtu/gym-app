@@ -1,9 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CourseCard Component renders according to design 1`] = `
+exports[`CoursesList Component renders according to design 1`] = `
 <div
-  className="course-card"
-/>
+  className="course-list"
+>
+  <CourseCard
+    course={
+      Object {
+        "_id": "id",
+        "categories": Array [
+          "c1",
+          "c2",
+        ],
+        "name": "name",
+        "startDate": "",
+      }
+    }
+  />
+  <CourseCard
+    course={
+      Object {
+        "_id": "id",
+        "categories": Array [
+          "c4",
+          "c5",
+        ],
+        "name": "name2",
+        "startDate": "",
+      }
+    }
+  />
+</div>
 `;
-
-exports[`CoursesList Component renders according to design 1`] = `<CourseCard />`;

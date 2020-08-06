@@ -18,6 +18,7 @@
     "express": "^4.17.1",
     "helmet": "^3.23.3",
     "moment": "^2.27.0",
-    "mongoose": "^5.9.25"
+    "mongoose": "^5.9.25",
+    "react-query": "git+https://github.com/tannerlinsley/react-query.git"
   }
 }
