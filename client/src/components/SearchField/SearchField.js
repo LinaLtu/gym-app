@@ -11,11 +11,11 @@ const SearchField = ({ date, setCategories, setDate }) => {
     return (
         <div className={CSS_NAME}>
             <div className={`${CSS_NAME}_start-date`}>
-                <label for="byStartDate" className={`${CSS_NAME}_label`}>Search By Start Date</label>
+                <label htmlFor="byStartDate" className={`${CSS_NAME}_label`}>Search By Start Date</label>
                 < SearchDatePicker callback={setDate} date={moment(date).toDate()} />
             </div>
             <div className={`${CSS_NAME}_category`}>
-                <label for="byStartDate" className={`${CSS_NAME}_label`}>Search By Category</label>
+                <label htmlFor="byStartDate" className={`${CSS_NAME}_label`}>Search By Category</label>
                 < CategoryPicker callback={setCategories} />
             </div>
         </div>
@@ -23,7 +23,7 @@ const SearchField = ({ date, setCategories, setDate }) => {
 }
 
 SearchField.propTypes = {
-    date: PropTypes.string.isRequired,
+    date: PropTypes.instanceOf(moment).isRequired,
     setCategories: PropTypes.func.isRequired,
     setDate: PropTypes.func.isRequired
 };

@@ -1,3 +1,3 @@
-import CategoryPick from './CategoryPicker';
+import CategoryPicker from './CategoryPicker';
 
-export default CategoryPick;
+export default CategoryPicker;

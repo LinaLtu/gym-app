@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './CategoryPicker.scss';
 
-const CategoryPick = ({ callback }) => {
+const CategoryPicker = ({ callback }) => {
     const defaultCategories = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'];
     const [checkedState, setCheckedState] = useState(defaultCategories.reduce((object, category) => {
         object[category] = true;
@@ -51,4 +51,4 @@ const CategoryPick = ({ callback }) => {
     )
 }
 
-export default CategoryPick; 
+export default CategoryPicker; 

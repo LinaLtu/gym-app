@@ -58,7 +58,7 @@ const Paginator = ({ currentPage, setPage, dataLength }) => {
 
 Paginator.propTypes = {
     currentPage: PropTypes.number.isRequired,
-    setPage: PropTypes.number.isRequired,
+    setPage: PropTypes.func.isRequired,
     dataLength: PropTypes.number.isRequired
 };
 

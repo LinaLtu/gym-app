@@ -6,8 +6,7 @@ exports[`MainPage Component renders according to design 1`] = `
 >
   <Header />
   <SearchField
-    categories={Array []}
-    page={1}
+    date={"2020-08-06T12:28:22.086Z"}
     setCategories={[Function]}
     setDate={[Function]}
   />

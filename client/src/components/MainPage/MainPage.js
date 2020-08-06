@@ -39,9 +39,8 @@ const MainPage = () => {
         <div className={CSS_NAME}>
             <Header />
             <SearchField
-                categories={categories}
-                page={page}
                 setCategories={setCategories}
+                date={date}
                 setDate={setDate}
             />
             <CoursesList courses={data} />
